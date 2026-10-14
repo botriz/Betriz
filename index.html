@@ -1,0 +1,710 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
+<meta name="description" content="BOTRIZ؛ چشم‌اندازی برای توسعه هوش مصنوعی، دانش، فناوری و جهان‌های دیجیتال هوشمند، با تمرکز بر عدالت، دسترسی و پیشرفت پایدار.">
+<title>BOTRIZ | فراتر از یک وب‌سایت</title>
+
+<style>
+:root {
+  --bg: #07111f;
+  --panel: #0d1b2d;
+  --panel2: #10243a;
+  --gold: #e6bd70;
+  --cyan: #67d8f2;
+  --white: #f4f7fc;
+  --muted: #a9b9cd;
+  --line: rgba(155,190,220,.16);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  margin: 0;
+  font-family: Tahoma, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 2;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  width: min(1120px, 91%);
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(7,17,31,.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(16px);
+}
+
+.nav {
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.brand-mark {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--gold);
+  border-radius: 14px 4px 14px 4px;
+  color: var(--gold);
+  font-size: 23px;
+}
+
+.brand small {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+nav a:hover { color: var(--gold); }
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 80px;
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(28,105,151,.23), transparent 42%),
+    radial-gradient(ellipse at 10% 75%, rgba(188,143,60,.10), transparent 40%);
+}
+
+.hero:before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border: 1px solid rgba(103,216,242,.10);
+  border-radius: 50%;
+  top: -180px;
+  left: -150px;
+  box-shadow: 0 0 0 40px rgba(103,216,242,.025),
+              0 0 0 90px rgba(103,216,242,.02);
+}
+
+.eyebrow {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  border: 1px solid rgba(230,189,112,.32);
+  color: var(--gold);
+  background: rgba(230,189,112,.06);
+  padding: 5px 13px;
+  border-radius: 50px;
+  font-size: 12px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 12px var(--cyan);
+}
+
+h1 {
+  font-size: clamp(38px, 6.5vw, 72px);
+  line-height: 1.45;
+  margin: 23px 0;
+  letter-spacing: -1.5px;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.hero p {
+  max-width: 740px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 11px 22px;
+  border-radius: 9px;
+  font-weight: bold;
+  font-size: 13px;
+  transition: .2s;
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, #f0d397, #c89b4c);
+  color: #101522;
+}
+
+.btn-secondary {
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.025);
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.hero-note {
+  margin-top: 38px;
+  border-right: 2px solid var(--cyan);
+  padding-right: 15px;
+  color: var(--muted);
+  font-size: 12px;
+  max-width: 620px;
+}
+
+section { padding: 76px 0; }
+
+.section-head {
+  max-width: 740px;
+  margin-bottom: 32px;
+}
+
+.kicker {
+  color: var(--cyan);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: clamp(25px, 4vw, 38px);
+  line-height: 1.6;
+  margin: 8px 0 13px;
+}
+
+.section-head p, .body-copy {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, rgba(16,36,58,.88), rgba(10,24,40,.85));
+  border-radius: 16px;
+  padding: 23px;
+  transition: border-color .2s, transform .2s;
+}
+
+.card:hover {
+  border-color: rgba(103,216,242,.45);
+  transform: translateY(-3px);
+}
+
+.icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  border: 1px solid rgba(230,189,112,.26);
+  background: rgba(230,189,112,.06);
+  border-radius: 12px;
+  font-size: 22px;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin: 15px 0 7px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 0;
+  line-height: 2.2;
+}
+
+.card .status {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--cyan);
+  font-size: 10px;
+  border: 1px solid rgba(103,216,242,.2);
+  border-radius: 30px;
+  padding: 2px 9px;
+}
+
+.alt {
+  background: linear-gradient(180deg, rgba(14,31,50,.65), rgba(7,17,31,0));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.principles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+}
+
+.principle {
+  display: flex;
+  gap: 14px;
+  padding: 19px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: rgba(255,255,255,.018);
+}
+
+.principle b {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.principle p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.timeline {
+  border-right: 1px solid rgba(230,189,112,.5);
+  margin-right: 8px;
+  padding-right: 26px;
+}
+
+.step {
+  position: relative;
+  padding-bottom: 28px;
+}
+
+.step:before {
+  content: "";
+  position: absolute;
+  right: -32px;
+  top: 10px;
+  width: 11px;
+  height: 11px;
+  background: var(--gold);
+  border: 4px solid var(--bg);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--gold);
+}
+
+.step h3 { font-size: 15px; margin: 0 0 5px; }
+.step p { font-size: 12px; color: var(--muted); margin: 0; }
+
+.cta {
+  padding: 42px;
+  border: 1px solid rgba(230,189,112,.3);
+  border-radius: 20px;
+  background:
+    radial-gradient(ellipse at 90% 0%, rgba(103,216,242,.10), transparent 50%),
+    linear-gradient(135deg, #11253a, #0b1727);
+}
+
+.cta p {
+  max-width: 740px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.disclaimer {
+  margin-top: 25px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 15px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+footer {
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+@media(max-width: 760px) {
+  .nav { padding: 12px 0; align-items: flex-start; }
+  nav {
+    max-width: 55%;
+    flex-wrap: wrap;
+    gap: 5px 13px;
+    justify-content: flex-start;
+  }
+  nav a { font-size: 11px; }
+  .hero { padding: 68px 0 55px; }
+  .hero p { font-size: 14px; }
+  section { padding: 55px 0; }
+  .grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+  .card { padding: 15px; }
+  .card h3 { font-size: 14px; }
+  .card p { font-size: 11px; }
+  .principles { grid-template-columns: 1fr; }
+  .cta { padding: 24px; }
+}
+
+@media(max-width: 390px) {
+  .grid { grid-template-columns: 1fr; }
+  .brand { font-size: 21px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand" aria-label="BOTRIZ صفحه اصلی">
+      <span class="brand-mark">✳</span>
+      <span>BOTRIZ<small>دانش • فناوری • آینده</small></span>
+    </a>
+    <nav aria-label="منوی اصلی">
+      <a href="#vision">چشم‌انداز</a>
+      <a href="#branches">شاخه‌ها</a>
+      <a href="#principles">اصول</a>
+      <a href="#roadmap">نقشه راه</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container">
+    <span class="eyebrow"><span class="dot"></span> یک اکوسیستم فناوری در حال شکل‌گیری</span>
+
+    <h1>
+      آینده فقط چیزی نیست که<br>
+      منتظرش بمانیم؛<br>
+      <span class="gold">چیزی است که می‌سازیم.</span>
+    </h1>
+
+    <p>
+      BOTRIZ چشم‌اندازی برای پیوند دانش، هوش مصنوعی، فناوری و خلاقیت است؛
+      تلاشی برای ساخت مجموعه‌ای از ابزارها و خدمات هوشمند که بتوانند
+      یادگیری، حل مسائل، همکاری و پیشرفت انسان‌ها را آسان‌تر کنند.
+      ما از یک بنیاد منظم شروع می‌کنیم و برای توسعهٔ گام‌به‌گام آن
+      به سوی یک اکوسیستم دیجیتال گسترده برنامه‌ریزی می‌کنیم.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="#vision">چشم‌انداز ما را بشناسید ←</a>
+      <a class="btn btn-secondary" href="#roadmap">مشاهدهٔ نقشهٔ راه</a>
+    </div>
+
+    <div class="hero-note">
+      یک هویت مرکزی؛ شاخه‌های تخصصی؛ توسعه‌ای مرحله‌به‌مرحله؛
+      و فناوری‌هایی که باید ارزش واقعی برای انسان‌ها ایجاد کنند.
+    </div>
+  </div>
+</section>
+
+<section id="vision">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">چرا BOTRIZ؟</span>
+      <h2>فناوری باید فراتر از نمایش قدرت باشد.</h2>
+      <p>
+        ارزش فناوری زمانی آشکار می‌شود که دانش را در دسترس‌تر کند،
+        مسائل واقعی را حل کند، فرصت‌های تازه به وجود آورد و به انسان‌ها
+        امکان دهد با آگاهی و اختیار بیشتری تصمیم بگیرند.
+        BOTRIZ با همین جهت‌گیری طراحی می‌شود.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="icon">✧</div>
+        <h3>دانش و آگاهی</h3>
+        <p>سامان‌دهی دانش، دسترسی به منابع معتبر، آموزش و ابزارهای پژوهشی برای تبدیل اطلاعات به درک و توانایی عملی.</p>
+      </article>
+
+      <article class="card">
+        <div class="icon">◈</div>
+        <h3>هوش مصنوعی کاربردی</h3>
+        <p>توسعهٔ دستیارها و عامل‌های هوشمندی که در برنامه‌ریزی، تحلیل، تولید و انجام وظایف مجاز به انسان کمک کنند.</p>
+      </article>
+
+      <article class="card">
+        <div class="icon">◎</div>
+        <h3>عدالت و برابری</h3>
+        <p>توجه به دسترسی منصفانه، احترام به انسان‌ها، شفافیت و کاهش موانعی که فرصت یادگیری و پیشرفت را محدود می‌کنند.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="branches">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">معماری اکوسیستم</span>
+      <h2>یک هویت مرکزی؛ شاخه‌های مستقل و تخصصی</h2>
+      <p>
+        هر بخش BOTRIZ وظیفه و مرز مشخصی خواهد داشت.
+        بخش‌ها در صورت نیاز با رابط‌های استاندارد با یکدیگر ارتباط می‌گیرند،
+        بدون آنکه مسئولیت‌ها و اطلاعات حساسشان بی‌دلیل در هم ادغام شوند.
+        شاخه‌های زیر چارچوب برنامه‌ریزی توسعه هستند، نه فهرست خدمات فعال.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="icon">⌘</div>
+        <h3>BOTRIZ AI</h3>
+        <p>دستیار هوشمند مرکزی، برنامه‌ریزی وظایف، مدیریت ابزارها، حافظهٔ پایدار و هماهنگی فعالیت‌های مجاز با تأیید انسانی.</p>
+        <span class="status">شاخهٔ بنیادین</span>
+      </article>
+
+      <article class="card">
+        <div class="icon">◇</div>
+        <h3>BOTRIZ WORLDS</h3>
+        <p>برنامهٔ ساخت جهان‌های دیجیتال تعاملی با محیط‌های قابل کاوش، شخصیت‌های هوشمند، حافظه، اهداف و روابط پویا.</p>
+        <span class="status">چشم‌انداز توسعه</span>
+      </article>
+
+      <article class="card">
+        <div class="icon">▣</div>
+        <h3>BOTRIZ COMMERCE</h3>
+        <p>بخش تجاری مستقل برای محصولات، خدمات، سفارش‌ها، مشتریان، فروشگاه دیجیتال و توسعهٔ مسیرهای درآمدی پایدار.</p>
+        <span class="status">شاخهٔ برنامه‌ریزی‌شده</span>
+      </article>
+
+      <article class="card">
+        <div class="icon">◉</div>
+        <h3>BOTRIZ FINANCE</h3>
+        <p>زیرساخت مدیریت مالی، ثبت و تطبیق تراکنش‌ها، گزارش‌دهی، کنترل پرداخت‌ها و مدیریت امن دسترسی‌های مالی.</p>
+        <span class="status">شاخهٔ برنامه‌ریزی‌شده</span>
+      </article>
+
+      <article class="card">
+        <div class="icon">⌘</div>
+        <h3>BOTRIZ KNOWLEDGE</h3>
+        <p>آموزش، پژوهش، سازمان‌دهی منابع علمی و توسعهٔ ابزارهایی برای بررسی شواهد و یادگیری مستمر.</p>
+        <span class="status">شاخهٔ برنامه‌ریزی‌شده</span>
+      </article>
+
+      <article class="card">
+        <div class="icon">✧</div>
+        <h3>BOTRIZ STUDIO</h3>
+        <p>ابزارهای تولید و مدیریت محتوا، طراحی، رسانه، انیمیشن و تبدیل ایده‌ها به محصولات دیجیتال.</p>
+        <span class="status">شاخهٔ برنامه‌ریزی‌شده</span>
+      </article>
+
+      <article class="card">
+        <div class="icon">♧</div>
+        <h3>BOTRIZ COMMUNITY</h3>
+        <p>فضایی برای مشارکت، ارتباطات، همکاری، تبادل تجربه و شکل‌گیری پروژه‌های مشترک با قواعد روشن.</p>
+        <span class="status">شاخهٔ برنامه‌ریزی‌شده</span>
+      </article>
+
+      <article class="card">
+        <div class="icon">⬡</div>
+        <h3>BOTRIZ INFRASTRUCTURE</h3>
+        <p>پایه‌های فنی، امنیت، مدیریت داده، پشتیبان‌گیری، ثبت رویدادها و ابزارهای لازم برای رشد قابل‌کنترل اکوسیستم.</p>
+        <span class="status">زیرساخت مشترک</span>
+      </article>
+
+      <article class="card">
+        <div class="icon">↗</div>
+        <h3>BOTRIZ IMPACT</h3>
+        <p>برنامه‌ریزی برای ابتکارهای علمی و اجتماعی که با سنجش نتایج، مسئولیت‌پذیری و توجه به نیازهای واقعی پیش می‌روند.</p>
+        <span class="status">چشم‌انداز توسعه</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="principles">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">اصول بنیادین</span>
+      <h2>رشد بزرگ، به ساختاری محکم نیاز دارد.</h2>
+      <p>
+        توسعهٔ پایدار فقط به قابلیت‌های بیشتر وابسته نیست؛
+        به معماری درست، تصمیم‌گیری مسئولانه، امنیت و اعتماد نیز نیاز دارد.
+      </p>
+    </div>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="icon">01</div>
+        <div>
+          <b>معماری منظم و ماژولار</b>
+          <p>هر شاخه مسئولیت، رابط، مجوز و مسیر توسعهٔ تعریف‌شده دارد و می‌تواند بدون بازطراحی کل سامانه گسترش یابد.</p>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="icon">02</div>
+        <div>
+          <b>انسان در مرکز تصمیم‌های حساس</b>
+          <p>عملیات مهم مالی، انتشار عمومی، تغییرات حساس و اقدامات برگشت‌ناپذیر باید تحت کنترل و مجوز مناسب باقی بمانند.</p>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="icon">03</div>
+        <div>
+          <b>امنیت و حریم خصوصی</b>
+          <p>دسترسی حداقلی، محافظت از اطلاعات محرمانه، ثبت رویدادها و پشتیبان‌گیری باید از مراحل اولیه در طراحی لحاظ شوند.</p>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="icon">04</div>
+        <div>
+          <b>استقلال و قابلیت جایگزینی</b>
+          <p>تا حد امکان از استانداردهای باز و اجزای قابل‌تعویض استفاده می‌کنیم تا وابستگی غیرضروری به ارائه‌دهنده‌ای خاص کاهش یابد.</p>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="icon">05</div>
+        <div>
+          <b>شفافیت و مسئولیت‌پذیری</b>
+          <p>ادعاها باید با واقعیت فنی سازگار باشند و پیشرفت هر قابلیت با آزمون و نتیجهٔ قابل بررسی سنجیده شود.</p>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="icon">06</div>
+        <div>
+          <b>عدالت و احترام به انسان</b>
+          <p>فناوری باید در خدمت کاهش آسیب، گسترش فرصت‌ها و رفتار منصفانه باشد، نه ابزاری برای سلب اختیار یا تبعیض.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="roadmap">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">نقشهٔ راه</span>
+      <h2>از یک بنیاد کوچک تا یک اکوسیستم گسترده</h2>
+      <p>
+        مسیر توسعه مرحله‌ای است؛ هر مرحله پس از ارزیابی فنی، امنیتی
+        و اقتصادی گسترش می‌یابد. ترتیب زیر جهت‌گیری پروژه را نشان می‌دهد،
+        نه وعدهٔ تاریخ قطعی برای راه‌اندازی قابلیت‌ها.
+      </p>
+    </div>
+
+    <div class="timeline">
+      <div class="step">
+        <h3>مرحلهٔ اول — بنیاد BOTRIZ</h3>
+        <p>سامان‌دهی مخزن کد، هویت مرکزی، ساختار ماژول‌ها، امنیت پایه، ثبت رویدادها و پنل مدیریت.</p>
+      </div>
+
+      <div class="step">
+        <h3>مرحلهٔ دوم — دستیار هوشمند</h3>
+        <p>توسعهٔ تدریجی حافظه، برنامه‌ریزی وظایف، ابزارهای قابل‌کنترل و اتصال‌های لازم، همراه با آزمون و تأیید انسانی.</p>
+      </div>
+
+      <div class="step">
+        <h3>مرحلهٔ سوم — خدمات و درآمد پایدار</h3>
+        <p>آزمایش محصولات و خدمات واقعی، ایجاد بخش تجاری، بررسی مدل‌های درآمدی و پیاده‌سازی حسابداری و پرداخت امن در صورت امکان.</p>
+      </div>
+
+      <div class="step">
+        <h3>مرحلهٔ چهارم — گسترش دانش و همکاری</h3>
+        <p>افزودن ابزارهای پژوهش، آموزش، تولید محتوا و قابلیت‌های مشارکتی بر اساس نیاز کاربران و منابع موجود.</p>
+      </div>
+
+      <div class="step">
+        <h3>مرحلهٔ پنجم — جهان دیجیتال هوشمند</h3>
+        <p>ساخت و آزمایش محیط‌های تعاملی، شخصیت‌های دارای حافظه و رفتار هدفمند و سامانه‌های شبیه‌سازی‌شده، با ارزیابی مستمر کیفیت و ایمنی.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="join">
+  <div class="container">
+    <div class="cta">
+      <span class="kicker">آینده‌ای که باید ساخته شود</span>
+      <h2>ایده‌های بزرگ، با قدم‌های واقعی آغاز می‌شوند.</h2>
+      <p>
+        BOTRIZ می‌خواهد با نظم مهندسی، یادگیری مستمر و تمرکز بر مسائل واقعی،
+        راهی برای تبدیل ایده‌های بلندمدت به ابزارها و خدمات کاربردی ایجاد کند.
+        معیار پیشرفت ما صرفاً بزرگی وعده‌ها نیست؛ بلکه قابلیت‌هایی است که
+        واقعاً ساخته می‌شوند، آزموده می‌شوند و برای انسان‌ها ارزش ایجاد می‌کنند.
+      </p>
+      <a class="btn btn-primary" href="#home">بازگشت به ابتدای صفحه ↑</a>
+
+      <div class="disclaimer">
+        <strong>دربارهٔ وضعیت پروژه:</strong>
+        BOTRIZ یک چشم‌انداز و اکوسیستم در حال توسعه است.
+        معرفی شاخه‌ها و نقشهٔ راه به معنای فعال‌بودن همهٔ خدمات نیست.
+        قابلیت‌ها پس از پیاده‌سازی، آزمایش و تأیید، به‌صورت شفاف معرفی خواهند شد.
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>
+      <strong style="color:var(--gold)">BOTRIZ</strong>
+      <div>دانش، فناوری و پیشرفت مسئولانه</div>
+    </div>
+    <div>© <span id="year"></span> BOTRIZ — حقوق محفوظ است.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
