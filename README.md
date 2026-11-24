@@ -1,10 +1,17 @@
-# Betriz — public landing-page prototype
+# BOTRIZ — وب‌سایت معرفی استاتیک
 
-This repository contains a static Persian landing-page prototype.
+این مخزن یک وب‌سایت معرفی فارسی و واکنش‌گراست و برای اجرا به Node.js، دیتابیس یا VPS نیاز ندارد.
 
-- Status: `STATIC WEBSITE PROTOTYPE`
-- Server: not required for static preview or GitHub Pages
-- Backend, account system, payments and wallet: not implemented here
-- Canonical backend: [botriz/Suraya-ai](https://github.com/botriz/Suraya-ai)
+## انتشار بدون سرور
+- انتشار خودکار با GitHub Pages از طریق GitHub Actions در شاخهٔ `main`
+- اجرای دستی انتشار از بخش Actions نیز پشتیبانی می‌شود
+- فایل‌های سایت مستقیماً از ریشهٔ مخزن منتشر می‌شوند
+- هزینهٔ VPS و نگهداری backend برای این وب‌سایت وجود ندارد
 
-Do not present this page as an active wallet, blockchain, or autonomous AI product.
+## مرز قابلیت‌ها
+این وب‌سایت صفحهٔ معرفی است؛ ورود کاربران، API، پرداخت، پنل عملیاتی یا خدمات هوش مصنوعی را اجرا نمی‌کند. این قابلیت‌ها باید در برنامه‌های مستقل یا سرویس‌های backend جداگانه پیاده‌سازی شوند.
+
+## کنترل کیفیت
+```bash
+node --test
+```
